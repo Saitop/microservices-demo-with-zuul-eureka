@@ -1,0 +1,22 @@
+server:
+  port: 2002
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:2000/eureka/
+
+
+#routes' path and serviceid must set up together
+
+zuul:
+  prefix: /api
+#  ignoredServices: '*'
+#  routes:
+#    compute-service:
+#      serviceId: compute-service
+#      url: http://localhost:2001
+#      path: /compute-service/**
+#    static:
+#      path: /static/*
+
