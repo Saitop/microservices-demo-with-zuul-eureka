@@ -4,13 +4,14 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:2000/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
 
 #routes' path and serviceid must set up together
 
 zuul:
   prefix: /api
+  strip-prefix: true
 #  ignoredServices: '*'
 #  routes:
 #    compute-service:
