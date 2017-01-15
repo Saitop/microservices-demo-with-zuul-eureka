@@ -19,11 +19,11 @@ import org.springframework.cloud.netflix.ribbon.RibbonClient;
 @RibbonClient(name = "say-hello", configuration = SayHelloConfiguration.class)
 public class UserApplication {
 
-  @LoadBalanced
-  @Bean
-  RestTemplate restTemplate(){
-    return new RestTemplate();
-  }
+//  @LoadBalanced
+//  @Bean
+//  RestTemplate restTemplate(){
+//    return new RestTemplate();
+//  }
 
   @Autowired
   RestTemplate restTemplate;
@@ -47,6 +47,59 @@ public class UserApplication {
 
     return String.format("the sum by zuul is, %s!", sum);
   }
+
+  //get sample
+//  private static void getEmployeeById()
+//  {
+//    final String uri = "http://localhost:8080/springrestexample/employees/{id}";
+//
+//    Map<String, String> params = new HashMap<String, String>();
+//    params.put("id", "1");
+//
+//    RestTemplate restTemplate = new RestTemplate();
+//    EmployeeVO result = restTemplate.getForObject(uri, EmployeeVO.class, params);
+//
+//    System.out.println(result);
+//  }
+//
+  //post sample
+//  private static void createEmployee()
+//  {
+//    final String uri = "http://localhost:8080/springrestexample/employees";
+//
+//    EmployeeVO newEmployee = new EmployeeVO(-1, "Adam", "Gilly", "test@email.com");
+//
+//    RestTemplate restTemplate = new RestTemplate();
+//    EmployeeVO result = restTemplate.postForObject( uri, newEmployee, EmployeeVO.class);
+//
+//    System.out.println(result);
+//  }
+
+  //put sample
+//  private static void deleteEmployee()
+//  {
+//    final String uri = "http://localhost:8080/springrestexample/employees/{id}";
+//
+//    Map<String, String> params = new HashMap<String, String>();
+//    params.put("id", "2");
+//
+//    EmployeeVO updatedEmployee = new EmployeeVO(2, "New Name", "Gilly", "test@email.com");
+//
+//    RestTemplate restTemplate = new RestTemplate();
+//    restTemplate.put ( uri, updatedEmployee, params);
+//  }
+
+  //delete sample
+//  private static void deleteEmployee()
+//  {
+//    final String uri = "http://localhost:8080/springrestexample/employees/{id}";
+//
+//    Map<String, String> params = new HashMap<String, String>();
+//    params.put("id", "2");
+//
+//    RestTemplate restTemplate = new RestTemplate();
+//    restTemplate.delete ( uri,  params );
+//  }
 
   public static void main(String[] args) {
     SpringApplication.run(UserApplication.class, args);
