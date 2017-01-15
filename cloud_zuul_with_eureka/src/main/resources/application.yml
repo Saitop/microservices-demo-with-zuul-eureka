@@ -10,7 +10,7 @@ eureka:
 #routes' path and serviceid must set up together
 
 zuul:
-  prefix: /api
+#  prefix: /api
   strip-prefix: true
 #  ignoredServices: '*'
 #  routes:
@@ -21,3 +21,13 @@ zuul:
 #    static:
 #      path: /static/*
 
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 6000
