@@ -5,9 +5,18 @@ spring:
 server:
   port: 8888
 
-say-hello:
-  ribbon:
-    eureka:
-      enabled: false
-    listOfServers: localhost:8090,localhost:9092,localhost:9999
-    ServerListRefreshInterval: 15000
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+#config say-hello service manually
+#say-hello:
+#  ribbon:
+#    eureka:
+#      enabled: false
+#    listOfServers: localhost:8090,localhost:9092,localhost:9999
+#    ServerListRefreshInterval: 15000
+
